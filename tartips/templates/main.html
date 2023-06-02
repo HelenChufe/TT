@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<head>
+    <title></title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    p { 
+        text-align: center;
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <h1>TarTips</h1>
+    <div>
+        <h2>Guess-a-ammo</h2>
+        <img src="{% static 'tartips/imagen.jpg'%}" alt="Guess-a-ammo">
+        <p>Can you guess every single round in tarkov?</p>
+        <p>ha ha we don't think so.</p>
+        <a href="{%url 'guessammo'%}">Let's try it</a>
+    </div>
+    <div></div>
+</body>
