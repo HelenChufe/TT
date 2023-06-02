@@ -8,4 +8,4 @@ def main(request):
     Process:None
     Return:Devuelve el render de la pagina principal.
     '''
-    return render(request,'main.html')
+    return render(request,'index.html')
