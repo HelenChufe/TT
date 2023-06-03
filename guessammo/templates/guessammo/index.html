@@ -16,17 +16,19 @@
 
   <body>
     <div>
-      <img src="{{guess.imagen}}" alt="Ammo" />
+      <img src="{{guess.imagen.url}}" alt="Ammo" />
     </div>
 
     {{num}}
 
     <div>
-      {% for respuesta in respuestas %} {% if respuesta = guess %}
-      <a href="{% url 'guessed' %}">{{respuesta}}</a>
-      {% else %}
-      <a href="{% url 'failed' %}">{{respuesta}}</a>
-      {% endif %} {% elif %} {% endif %} {% endif %} {% endfor %}
+      {% for respuesta in respuestas %} 
+        {% if respuesta == guess %}
+          <a href="{% url 'guessed' %}">{{respuesta}}</a>
+        {% else %}
+          <a href="{% url 'failed' %}">{{respuesta}}</a>
+        {% endif %}
+      {% endfor %}
     </div>
   </body>
 </html>
