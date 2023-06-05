@@ -8,9 +8,10 @@ def guessammo(request):
     
     numero_ammos= len(ammos)
     
-    random = randint(0,numero_ammos)
+    random = randint(0,numero_ammos-1)
     
     guess = ammos[random]
+    url = guess.imagen.url[1:]
     
     respuestas = [guess]
     for i in range(0,3):
@@ -25,7 +26,7 @@ def guessammo(request):
     
     shuffle(respuestas)
     
-    context={'guess':guess,'ammos':ammos,'respuestas':respuestas}
+    context={'guess':guess,'url':url,'ammos':ammos,'respuestas':respuestas}
 
     return render(request,'guessammo/index.html',context)
 

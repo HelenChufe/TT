@@ -10,4 +10,4 @@ urlpatterns = [
     path('',guessammo,name='guessammo'),
     path('guessed',guessed,name='guessed'),
     path('failed',failed,name='failed'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
