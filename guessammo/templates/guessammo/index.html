@@ -15,6 +15,7 @@
   </head>
 
   <body>
+
     <div>
       <img src="{{url}}" alt="Ammo" />
     </div>
@@ -24,9 +25,9 @@
     <div>
       {% for respuesta in respuestas %} 
         {% if respuesta == guess %}
-          <a href="{% url 'guessed' %}">{{respuesta}}</a>
+          <a href="{% url 'guessed' respuesta.id 1 %}">{{respuesta}}</a>
         {% else %}
-          <a href="{% url 'failed' %}">{{respuesta}}</a>
+          <a href="{% url 'guessed' respuesta.id 0 %}">{{respuesta}}</a>
         {% endif %}
       {% endfor %}
     </div>
