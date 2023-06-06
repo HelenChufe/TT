@@ -1,39 +1,26 @@
 from django.shortcuts import render,redirect
 from .models import Ammo,Calibre
-from random import randint,shuffle
-# Create your views here.
+from random import shuffle
+from django.db.models import Count
+
 
 def guessammo(request):
-    ammos = Ammo.objects.all()
+    redirect('main')
+    redirect('guessammo')
+    random_ammo = Ammo.objects.order_by('?').first()
+    random_ammos = Ammo.objects.exclude(id=random_ammo.id).order_by('?')[:3]
     
-    numero_ammos= len(ammos)
-    
-    random = randint(0,numero_ammos-1)
-    
-    guess = ammos[random]
-    url = guess.imagen.url[1:]
-    
-    respuestas = [guess]
-    for i in range(0,3):
-        while True:
-            random = randint(0,numero_ammos)
-            respuesta = ammos[random]
-            if respuesta != guess:
-                respuestas.append(respuesta)
-                break
-        
-        
+    respuestas = list(random_ammos) + [random_ammo]
     
     shuffle(respuestas)
     
-    context={'guess':guess,'url':url,'ammos':ammos,'respuestas':respuestas}
+    context = {'guess': random_ammo, 'url': random_ammo.imagen.url[1:],
+            'respuestas': respuestas,}
+    return render(request, 'guessammo/index.html', context)
 
-    return render(request,'guessammo/index.html',context)
 
-def guessed(request):
+def guessed(request,roun,result):
+    ammos= Ammo.objects.get(id=roun)
+    context = {'ammo':ammos,'resultado':result}
+    return render(request,'guessammo/result.html',context)
     
-    return redirect('guessammo')
-
-def failed(request):
-    
-    return redirect('guessammo')
