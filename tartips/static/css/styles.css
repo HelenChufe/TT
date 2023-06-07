@@ -1,6 +1,13 @@
-body{
-  background-color: #e8e8e8;
+body {
+  background-color: #FFFFFF; /* Color de fondo claro */
+  color: #000000; /* Color de texto oscuro */
 }
+
+body.modo-nocturno {
+  background-color: #000000; /* Color de fondo oscuro */
+  color: #FFFFFF; /* Color de texto claro */
+}
+
 a {
   display: block;
   text-align: center;
