@@ -1,7 +1,9 @@
 body{
    background-color: #e8e8e8;
 }
-
+p{
+   text-align: center;
+}
 a {
    display: block;
    text-align: center;
@@ -76,9 +78,10 @@ a {
    .button-borders {
       display: block;
       margin: 0 auto;
-    position: static;
-    width: 2;
-    height: 2;
+      position: static;
+      width: 2;
+      height: 2;
+      margin-bottom: 10px;
    }
    
    .button-borders:before {
