@@ -1,17 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesga.css' %}">
     <title>Guess-a-Ammo</title>
-    <style>
-      a {
-        display: block;
-        text-align: center;
-      }
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
   </head>
 
   <body>
@@ -25,9 +18,16 @@
     <div>
       {% for respuesta in respuestas %} 
         {% if respuesta == guess %}
-          <a href="{% url 'guessed' respuesta.id 1 %}">{{respuesta}}</a>
+        <div class="button-borders">
+          <button class="primary-button"><a href="{% url 'guessed' respuesta.id 1 %}">{{respuesta}}</a>
+          </button>
+        </div>
+          
         {% else %}
-          <a href="{% url 'guessed' respuesta.id 0 %}">{{respuesta}}</a>
+        <div class="button-borders">
+          <button class="primary-button"><a href="{% url 'guessed' respuesta.id 0 %}">{{respuesta}}</a>
+          </button>
+        </div>
         {% endif %}
       {% endfor %}
     </div>
