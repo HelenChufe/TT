@@ -10,6 +10,7 @@
 
 
 <body>
+    
     <h1>Modo Nocturno</h1>
     <button id="modoNocturnoBtn" onclick="toggleModoNocturno()">Modo Nocturno</button>
 
@@ -21,9 +22,9 @@
                 <p class="title">Can you guess every single round in tarkov?</p>
                 <p>Ha ha ha</p>
             </div>
-            <div class="backSide" href="{% url 'guessammo' %}">
+            <div class="backSide" >
                 <p class="title">We don't think so.</p>
-                <a>Let's try it</a>
+                <a href="{% url 'guessammo' %}">Let's try it</a>
             </div>
         </div>
     </div>

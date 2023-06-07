@@ -4,32 +4,40 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesga.css' %}">
+    <script src="{% static 'js/guessammo.js' %}" defer></script>
     <title>Guess-a-Ammo</title>
   </head>
 
   <body>
-
+    
     <div>
       <img src="{{guess.imagen.url}}" alt="Ammo" />
+      <img id="default" style="display: none;">
+      <p id="result"></p>
     </div>
-
-    {{num}}
 
     <div>
       {% for respuesta in respuestas %} 
-        {% if respuesta == guess %}
+   
         <div class="button-borders">
-          <button class="primary-button"><a href="{% url 'guessed' respuesta.id 1 %}">{{respuesta}}</a>
+          <button class="primary-button" id="{{respuesta}}">{{respuesta}}
           </button>
         </div>
-          
-        {% else %}
-        <div class="button-borders">
-          <button class="primary-button"><a href="{% url 'guessed' respuesta.id 0 %}">{{respuesta}}</a>
-          </button>
-        </div>
-        {% endif %}
+
       {% endfor %}
     </div>
+    <script>
+      var guess = '{{guess}}'
+      var respuestas = [
+      {%for item in respuestas%}
+      '{{item}}',
+      {%endfor%}
+      ]
+      var url = [
+      {%for item in respuestas%}
+      '{{item.imagen.url}}',
+      {%endfor%}
+      ]
+    </script>
   </body>
 </html>
