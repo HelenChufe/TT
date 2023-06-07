@@ -14,7 +14,7 @@ def guessammo(request):
     
     shuffle(respuestas)
     
-    context = {'guess': random_ammo, 'url': random_ammo.imagen.url[1:],
+    context = {'guess': random_ammo,
             'respuestas': respuestas,}
     return render(request, 'guessammo/index.html', context)
 
