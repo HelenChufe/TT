@@ -7,19 +7,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>TarTips</title>
 </head>
-
+<script>
+    var urlga = "{% url 'guessammo' %}"
+</script>
 
 <body>
     
     <h1>Modo Nocturno</h1>
     <button id="modoNocturnoBtn" onclick="toggleModoNocturno()">Modo Nocturno</button>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}" defer></script>
 
-    <div class="myCard">
+    <div class="myCard" >
         <div class="innerCard">
             <div class="frontSide">
-                <p class="title">Can you guess every single round in tarkov?</p>
+                <p class="title" >Can you guess every single round in tarkov?</p>
                 <p>Ha ha ha</p>
             </div>
             <div class="backSide" >

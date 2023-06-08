@@ -1,10 +1,10 @@
 body {
   background-color: #FFFFFF; /* Color de fondo claro */
-  color: #000000; /* Color de texto oscuro */
+  color: #111; /* Color de texto oscuro */
 }
 
 body.modo-nocturno {
-  background-color: #000000; /* Color de fondo oscuro */
+  background-color: #111; /* Color de fondo oscuro */
   color: #FFFFFF; /* Color de texto claro */
 }
 
@@ -14,6 +14,7 @@ a {
   color:  white;
   
 }
+
 .myCard {
     display: block;
     margin: 0 auto;
@@ -64,7 +65,7 @@ a {
   
   .frontSide,
   .frontSide::before {
-    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+    background: linear-gradient(45deg, rgb(22, 24, 34) 0%, rgb(81, 199, 45) 46%, rgb(15, 14, 11) 100%);
   }
   
   .backSide,
