@@ -11,12 +11,18 @@
   <body>
     
     <div>
-      <img src="{{guess.imagen.url}}" alt="Ammo" />
+      <img id="ammo" src="{{guess.imagen.url}}" alt="Ammo" />
       <img id="default" style="display: none;">
       <p id="result"></p>
     </div>
 
     <div>
+      <div class="button-borders">
+        <button class="primary-button" onclick="location.href='{%url 'guessammo'%}'"
+        id="next" style="display: none">Next??
+        </button>
+      </div>
+      
       {% for respuesta in respuestas %} 
   
         <div class="button-borders">
