@@ -18,9 +18,4 @@ def guessammo(request):
             'respuestas': respuestas,}
     return render(request, 'guessammo/index.html', context)
 
-
-def guessed(request,roun,result):
-    ammos= Ammo.objects.get(id=roun)
-    context = {'ammo':ammos,'resultado':result}
-    return render(request,'guessammo/result.html',context)
     
