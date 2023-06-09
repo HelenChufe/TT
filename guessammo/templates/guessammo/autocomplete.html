@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{% static 'js/gac.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/gac.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var guess = '{{guess}}'
+        var suggestions = [
+        {%for item in ammos%}
+        '{{item}}',
+        {%endfor%}
+        ]
+    </script>
+    <img id="ammo" src="{{guess.imagen.url}}" alt="Ammo" />
+
+    <div class="autocomplete">
+        <input type="text" id="myInput" placeholder="Search..."/>
+        <ul id="myUL"></ul>
+    </div>
+
+    
+</body>
+</html>

@@ -15,7 +15,12 @@ def guessammo(request):
     shuffle(respuestas)
     
     context = {'guess': random_ammo,
-            'respuestas': respuestas,}
+                'respuestas': respuestas,}
     return render(request, 'guessammo/index.html', context)
 
-    
+def guessAmmoAutoComplete(request):
+        ammos = Ammo.objects.all()
+        random_ammo = Ammo.objects.order_by('?').first()
+        
+        context= {'ammos':ammos, 'guess':random_ammo,}
+        return render(request,'guessammo/autocomplete.html',context)
